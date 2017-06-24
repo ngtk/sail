@@ -1,8 +1,8 @@
 module Sail
   class CLI < Thor
-    default_command :update
-
-    def update
+    def create(filepath)
+      config = Config.load(filepath)
+      CronJobFile.create(config)
     end
   end
 end
